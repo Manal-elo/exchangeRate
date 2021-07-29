@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		FB6F692D26A4EE3200B4683A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6F692B26A4EE3200B4683A /* LaunchScreen.storyboard */; };
 		FB6F693526A4EE8300B4683A /* ExchangeRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6F693426A4EE8300B4683A /* ExchangeRateTableViewCell.swift */; };
 		FBD190EE26B24B30001A4C52 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD190ED26B24B30001A4C52 /* GraphViewController.swift */; };
+		FBD190F226B368CC001A4C52 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD190F126B368CC001A4C52 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB6F692E26A4EE3200B4683A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6F693426A4EE8300B4683A /* ExchangeRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewCell.swift; sourceTree = "<group>"; };
 		FBD190ED26B24B30001A4C52 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		FBD190F126B368CC001A4C52 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,6 @@
 				C663D4BD7CDA96809B04D8C5 /* Pods-exchange_rate.debug.xcconfig */,
 				E1094B045E912950A2C9A9D3 /* Pods-exchange_rate.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +92,7 @@
 				FB6F692926A4EE3200B4683A /* Assets.xcassets */,
 				FB6F692B26A4EE3200B4683A /* LaunchScreen.storyboard */,
 				FB6F692E26A4EE3200B4683A /* Info.plist */,
+				FBD190F126B368CC001A4C52 /* Util.swift */,
 			);
 			path = exchange_rate;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 			files = (
 				FB6F693526A4EE8300B4683A /* ExchangeRateTableViewCell.swift in Sources */,
 				FBD190EE26B24B30001A4C52 /* GraphViewController.swift in Sources */,
+				FBD190F226B368CC001A4C52 /* Util.swift in Sources */,
 				FB6F692126A4EE3100B4683A /* AppDelegate.swift in Sources */,
 				FB6F692326A4EE3100B4683A /* SceneDelegate.swift in Sources */,
 			);

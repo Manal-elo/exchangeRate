@@ -17,7 +17,7 @@ class ExchangeRateTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        self.showSpinner()
         let apiEndPoint = "http://api.exchangeratesapi.io/v1/latest?access_key=a0e21e6fe3201a626cf403e2d2ee3052"
         guard let url = URL(string: apiEndPoint) else {return }
         let task = URLSession.shared.dataTask(with: url){ (data: Data?,response: URLResponse?,error: Error?) in
