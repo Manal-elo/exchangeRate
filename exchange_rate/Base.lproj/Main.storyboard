@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,21 +12,47 @@
         <!--Exchange Rate Table View Controller-->
         <scene sceneID="7y8-zt-Wn1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pTk-hp-Kjy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="qyY-UG-r9q" customClass="ExchangeRateTableViewController" customModule="exchange_rate" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZFY-Kh-YFG" customClass="exchangeRateTableView" customModule="exchange_rate" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" id="ubH-ln-xLZ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mx-za-E25">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <state key="normal" title="Currency: ">
+                                        <color key="titleColor" systemColor="labelColor"/>
+                                        <imageReference key="image" image="arrowshape.zigzag.right" catalog="system" renderingMode="original"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="popUpPi:" destination="qyY-UG-r9q" eventType="touchUpInside" id="qkz-Vb-gJb"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="6Mx-za-E25" firstAttribute="centerX" secondItem="ubH-ln-xLZ" secondAttribute="centerX" multiplier="40" id="PIB-J7-aoa"/>
+                                <constraint firstAttribute="width" secondItem="6Mx-za-E25" secondAttribute="width" id="k3E-Ob-ERh"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </stackView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rates" id="UMB-fH-buu">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rates" rowHeight="74" id="UMB-fH-buu">
+                                <rect key="frame" x="0.0" y="68.5" width="414" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UMB-fH-buu" id="AhI-gN-6bW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_chart" translatesAutoresizingMaskIntoConstraints="NO" id="bpE-pz-zTb">
-                                            <rect key="frame" x="328" y="5" width="73" height="33"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_chart" translatesAutoresizingMaskIntoConstraints="NO" id="XzM-ng-4Wp">
+                                            <rect key="frame" x="350" y="11" width="44" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -39,10 +66,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="bQP-lj-t1r"/>
                     <connections>
+                        <outlet property="pickerViewButton" destination="6Mx-za-E25" id="wyp-m7-N7N"/>
                         <segue destination="5wC-TN-6ma" kind="show" identifier="showgraph" id="rp0-g1-hqZ"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pTk-hp-Kjy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2163.768115942029" y="-129.24107142857142"/>
         </scene>
@@ -112,7 +139,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.zigzag.right" catalog="system" width="128" height="93"/>
         <image name="ic_chart" width="170.66667175292969" height="170.66667175292969"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
